@@ -22,8 +22,13 @@ function App() {
       .then(res => setUsersList(res.data))
   }
 
-  const selectUser = (user) => {
-    setUserSelected(user)
+  const selectUser = (user, isToggled) => {
+    if (isToggled) {
+      setUserSelected(user)
+    } else {
+      setUserSelected(null)
+    }
+    
     console.log(user)
   }
 
