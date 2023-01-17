@@ -29,55 +29,67 @@ const UsersForm = ({getUsers, userSelected}) => {
         <div>
             <form onSubmit={handleSubmit(submit)}>
                 <h2>User List</h2>
-                <div className="input-container">
-                    <label htmlFor="email">Email</label>
+                <div className="form-container">
+                 
+                 <div className="fn-container">
+                 <box-icon name='user'></box-icon>
+                    <label htmlFor="first_name"></label>
                     <input
                         required
-                        type="text"
-                        name="email"
-                        id="email"
-                        {...register("email")}
-                    />
-                </div>
-                <div className="input-container">
-                    <label htmlFor="password">Password</label>
-                    <input
-                        required
-                        type="password"
-                        name="password"
-                        id="password"
-                        {...register("password")}
-                    />
-                </div>
-                <div className="input-container">
-                    <label htmlFor="first_name">First name</label>
-                    <input
-                        required
+                        placeholder='first name'
                         type="text"
                         name="first_name"
                         id="first_name"
                         {...register("first_name")}
                     />
                 </div>
-                <div className="input-container">
-                    <label htmlFor="last_name">Last name</label>
+                <div className="ln-container">
+                    <label htmlFor="last_name"></label>
                     <input
                         required
+                        placeholder='last name'
                         type="text"
                         name="last_name"
                         id="last_name"
                         {...register("last_name")} 
                     />
                 </div>
-                <div className="input-container">
-                    <label htmlFor="birthday">Birthday</label>
+                <div className="e-container">
+                <box-icon name='envelope' type='solid' ></box-icon>
+                    <label htmlFor="email"></label>
                     <input
                         required
+                        placeholder='email'
+                        type="text"
+                        name="email"
+                        id="email"
+                        {...register("email")}
+                    />
+                </div>
+                <div className="p-container">
+                <box-icon name='lock-alt' type='solid' ></box-icon>
+                    <label htmlFor="password"></label>
+                    <input
+                        required
+                        placeholder='password'
+                        type="password"
+                        name="password"
+                        id="password"
+                        {...register("password")}
+                    />
+                </div>
+                <div className="b-container">
+                <box-icon name='calendar-event' ></box-icon>
+                    <label htmlFor="birthday"></label>
+                    <input
+                        required
+                        placeholder='Birthday'
                         type="date"
                         name="birthday"
                         id="birthday"
                         {...register("birthday")}
                     />
+                </div>
                 </div>
                 <button>Submit</button>
             </form>

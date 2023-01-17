@@ -1,12 +1,20 @@
+import axios from 'axios';
 import React from 'react';
 
-const UsersList = ({ usersList, selectUser }) => {
+const UsersList = ({ usersList, selectUser, getUsers }) => {
+
+    const deleteUser = (user) => {
+        axios.delete(`https://users-crud.academlo.tech/users/${user.id}/`)
+        .then(() => {
+            getUsers()
+        })
+    }
+
     return (
         <div>
-            <h1>Users List</h1>
             <ul className='ul-list'>
                 {usersList.map(user => (
-                    <li className='li-list' key={user.id}>
+                    <div className='li-list' key={user.id}>
                         <h4>New User</h4>
                         <h4><b>First Name: </b>{user.first_name}</h4>
                         <h4><b>Last Name: </b>{user.last_name}</h4>
@@ -16,7 +24,8 @@ const UsersList = ({ usersList, selectUser }) => {
                         <button onClick={() => selectUser(user)}>
                             Select
                         </button>
-                    </li>
+                        <button onClick={() => deleteUser(user)} >Delete</button>
+                    </div>
                 ))}
             </ul>
         </div>

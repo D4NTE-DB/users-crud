@@ -42,10 +42,12 @@
 }
 
 .input-container{
-  /* display: flex; */
-  margin: 5px;
-  text-align: left;
-  width: 100px;
+  max-width: 500px;
+}
+
+.input-container > input{
+  width: 300px;
+
 }
 
 
@@ -56,3 +58,66 @@
   background-color: rgba(255, 255, 255, 0.424) ;
   border-radius: 10px;
 }
+
+.ul-list{
+  display: flex;
+  font-size: 12px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.users-main{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* gap: 14rem; */
+}
+
+.form-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 5px;
+  text-align: left;
+}
+
+.e-container{
+  grid-column: 1/3;
+  grid-row: 2;
+}
+
+.e-container > input{
+  width: 355px;
+}
+
+.p-container{
+  grid-column: 1/3;
+  grid-row: 3;
+  width: 400px;
+}
+
+.p-container > input{
+  width: 355px;
+}
+
+.b-container{
+  grid-column: 1/3;
+  grid-row: 4;
+}
+
+.b-container > input{
+  width: 358px;
+}
+
+.ln-container{
+  margin-top: 6px;
+  margin-left: 8px;
+}
+
+box-icon{
+  position: relative;
+  top: 5px;
+}
+
+
+
+

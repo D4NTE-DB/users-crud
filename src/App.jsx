@@ -4,21 +4,22 @@ import './App.css'
 import UsersForm from './components/UsersForm'
 import UsersList from './components/UsersList'
 import axios from 'axios'
+import { BoxIconElement } from 'boxicons'
 
 
 function App() {
-  
-   const [usersList, setUsersList] = useState([])
-   const [ userSelected, setUserSelected] = useState(null)
+
+  const [usersList, setUsersList] = useState([])
+  const [userSelected, setUserSelected] = useState(null)
 
   useEffect(() => {
     axios.get(`https://users-crud.academlo.tech/users/`)
-    .then(res => setUsersList(res.data))
-  },[])
+      .then(res => setUsersList(res.data))
+  }, [])
 
   const getUsers = () => {
     axios.get(`https://users-crud.academlo.tech/users/`)
-    .then(res => setUsersList(res.data))
+      .then(res => setUsersList(res.data))
   }
 
   const selectUser = (user) => {
@@ -28,9 +29,11 @@ function App() {
 
   return (
     <div className="App">
-      <h3>Buenas</h3>
-      <UsersForm getUsers={getUsers} userSelected={userSelected}/>
-      <UsersList usersList={usersList} selectUser={selectUser} />
+      <h3>User App</h3>
+      <div className="users-main">
+      <UsersForm getUsers={getUsers} userSelected={userSelected} />
+      <UsersList usersList={usersList} selectUser={selectUser} getUsers={getUsers} />
+      </div>
     </div>
   )
 }
